@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebGo</title>
+    <script type="text/javascript" src="http://76.28.150.193:8888/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="./assetmanager.js"></script>
+    <script type="text/javascript" src="./gameengine.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+</head>
+<body>
+    <h2>Sun and Cloud</h2>
+    <h4>Julia Behnen</h4>
+    <h4>TCSS 491 Winter 2016 HW3</h4>
+    <p>
+        In this game, each circle selects another circle to be its "sun"
+        and another distinct circle to be its "cloud". The circle wants
+        a sunny day, so it tries to keep its sun directly between itself
+        and its cloud.
+    </p>
+    <p>
+        To play, select the number of circles and the game type in the
+        settings below, then press "Start" at any time to cancel the
+        existing round and start the new one. "Random" means that 
+        suns and clouds are assigned
+        randomly, "Circle" means that the sun-and-cloud arrangment of
+        all the participant circles will allow them to settle into a 
+        rotating circle pattern. The exact circle-sun-cloud arrangement
+        for the game is available in the console output as a table.
+    </p>
+    <span>
+        <select id="quantity" name="quantity">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <select id="gameType" name="gameType">
+            <option value="random">Random</option>
+            <option value="circle">Circle</option>
+        </select>
+        <button id="start">Start</button>
+    </span>
+    <br />
+    <span>
+        <input id="filename" placeholder="Save file name" style="width:200px;" />
+        <button id="save">Save</button>
+        <button id="load">Load</button>
+    </span>
+    <br />
+    <canvas id="gameWorld" width="800" height="800" style="border: 1px solid white; background: black; display: inline"></canvas>
+</body>
+</html>
